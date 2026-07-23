@@ -34,7 +34,7 @@ pipeline {
             }
             steps {
                 echo "Deploying Docker Containers..."
-                sh 'docker-compose up --build -d'
+                sh 'docker compose up --build -d'
             }
         }
 
@@ -44,7 +44,7 @@ pipeline {
             }
             steps {
                 echo "Stopping and Removing Containers..."
-                sh 'docker-compose down'
+                sh 'docker compose down'
                 sh 'docker image prune -af'
             }
         }
